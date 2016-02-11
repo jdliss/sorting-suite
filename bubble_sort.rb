@@ -11,9 +11,7 @@ class BubbleSort
           did_swap = true
         end
       end
-      if did_swap == false
-        break
-      end
+      break if did_swap == false
       length = length - 1
     end
     array
