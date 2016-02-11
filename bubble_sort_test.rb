@@ -28,4 +28,14 @@ class BubbleSortTest < Minitest::Test
     assert_equal ["a", "b", "c", "d"], sorter.sort(["d", "b", "a", "c"])
   end
 
+  def test_edge_case_empty_array
+    sorter = BubbleSort.new
+    assert_equal [], sorter.sort([])
+  end
+
+  def test_edge_case_reversed_array
+    sorter = BubbleSort.new
+    assert_equal [0,1,2,3,4,5,6,7,8,9], sorter.sort([9,8,7,6,5,4,3,2,1,0])
+  end
+
 end

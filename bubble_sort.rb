@@ -1,13 +1,10 @@
 require 'pry'
 
 class BubbleSort
-
-
   def sort(array)
     length = array.length
     loop do
       did_swap = false
-
       (length-1).times do |i|
         if array[i] > array[i+1]
           array[i], array[i+1] = array[i+1], array[i]
@@ -21,5 +18,4 @@ class BubbleSort
     end
     array
   end
-
 end
