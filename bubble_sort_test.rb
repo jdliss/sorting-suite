@@ -45,4 +45,8 @@ class BubbleSortTest < Minitest::Test
     assert_equal sorted, sorter.sort(reversed)
   end
 
+  def test_1000_chars
+    chars = ("a".."z").to_a
+    
+
 end
