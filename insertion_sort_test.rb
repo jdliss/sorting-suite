@@ -23,9 +23,18 @@ class InsertionSortTest < Minitest::Test
     assert_equal ["a", "b", "c"], result
   end
 
+  def test_it_sorts_a_and_b_and_c
+    sorter = InsertionSort.new
+    result =[0,1,2,3]
+    scrambled = [3,2,1,0]
+    assert_equal result, sorter.sort(scrambled)
+  end
+
   def test_can_sort_from_requirements
     sorter = InsertionSort.new
-    assert_equal ["a", "b", "c", "d"], sorter.sort(["d", "b", "a", "c"])
+    scrambled = ["d", "b", "a", "c"]
+    sorted = ["a", "b", "c", "d"]
+    assert_equal sorted, sorter.sort(scrambled)
   end
 
   def test_edge_case_empty_array
@@ -35,7 +44,9 @@ class InsertionSortTest < Minitest::Test
 
   def test_edge_case_reversed_array
     sorter = InsertionSort.new
-    assert_equal [0,1,2,3,4,5,6,7,8,9], sorter.sort([9,8,7,6,5,4,3,2,1,0])
+    scrambled = [9,8,7,6,5,4,3,2,1,0]
+    sorted = [0,1,2,3,4,5,6,7,8,9]
+    assert_equal sorted, sorter.sort(scrambled)
   end
 
   def test_edge_case_reversed_array_of_chars
@@ -45,10 +56,29 @@ class InsertionSortTest < Minitest::Test
     assert_equal sorted, sorter.sort(reversed)
   end
 
-  def test_edge_case_1_num_1_char
+  def test_edge_case_sorted_array_of_chars
+    sorted = %w(a b c d e f g h i j k l m n o p q r s t u v w x y z)
+    sorter = InsertionSort.new
+    assert_equal sorted, sorter.sort(sorted)
+  end
+
+  def test_edge_case_1_num
     sorted = [1]
     sorter = InsertionSort.new
-    assert_equal [1], sorter.sort(sorted)
+    assert_equal sorted, sorter.sort(sorted)
+  end
+
+  def test_edge_case_1_char
+    sorted = ["y"]
+    sorter = InsertionSort.new
+    assert_equal sorted, sorter.sort(sorted)
+  end
+
+  def test_edge_case_dups
+    sorter = InsertionSort.new
+    sorted = [1,2,2,2,2,3,4,5]
+    scrambled = [2,5,3,2,2,1,4,2]
+    assert_equal sorted, sorter.sort(scrambled)
   end
 
 

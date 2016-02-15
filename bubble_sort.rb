@@ -5,9 +5,9 @@ class BubbleSort
     length = array.length
     loop do
       did_swap = false
-      (length-1).times do |i|
-        if array[i] > array[i+1]
-          array[i], array[i+1] = array[i+1], array[i]
+      (length-1).times do |current|
+        if array[current] > array[current+1]
+          array[current], array[current+1] = array[current+1], array[current]
           did_swap = true
         end
       end
