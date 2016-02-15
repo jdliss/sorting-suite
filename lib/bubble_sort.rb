@@ -1,5 +1,3 @@
-require 'pry'
-
 class BubbleSort
   def sort(array)
     length = array.length

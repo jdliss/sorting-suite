@@ -1,9 +1,6 @@
-require 'pry'
 class SelectionSort
-
   def sort(array)
     length = array.length
-
     (length-1).times do |sorted_index|
       index_of_min = sorted_index
       (sorted_index+1).upto(length-1) do |unsorted_index|

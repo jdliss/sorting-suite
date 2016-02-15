@@ -1,9 +1,8 @@
-require 'pry'
 class MergeSort
   def sort(array)
     if array.length <= 1
       return array
-      
+
     else
       middle = (array.length / 2).floor
       left = sort(array[0..middle-1])
